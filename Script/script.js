@@ -6,6 +6,7 @@ let jugar = confirm('Quieres jugar?');
 
 const Jugadores = [];
 const CantidadDeNumeros = [];
+const Calificaciones = [];
 
 // Agregamos la cantidad de jugadores y sus nombres
 
@@ -45,7 +46,7 @@ const numeroAAdivinar = () =>{
     
     for(let i = 0; i < Jugadores.length; i++){
 
-        let num = Math.floor(Math.random()*10) ;
+        let num = Math.floor(Math.random()*10) + 1 ;
         CantidadDeNumeros.push(num);
 
     }
@@ -59,27 +60,38 @@ if(jugar){
     
         let jugadoresRestantes = Jugadores.length;
 
+        let j = 1;
+        
         do{
             for(let i = 0; i < jugadoresRestantes; i++){
 
                 let numAElegir = parseFloat(prompt(`Turno jugador ${Jugadores[i]}, elige un numero`));
 
-                if( CantidadDeNumeros[i] == numAElegir){
+                if( CantidadDeNumeros[i] == numAElegir && jugadoresRestantes > 1){
 
                     alert('GENIAL!! Has acertado al numero');
-
+                    
+                    Calificaciones.push( ` ${j}- ${Jugadores[i]} \n`);
                     Jugadores.splice(i, 1);
                     CantidadDeNumeros.splice(i, 1);
                     jugadoresRestantes = jugadoresRestantes - 1;
-
+                    
                     i--;
+                    j++;
+
                 }else{
             
                     alert('Upss.. Siguelo intentando');
                 }
+
             }
 
-        }while(jugadoresRestantes > 1 );
+            if(jugadoresRestantes <= 1){
+
+                Calificaciones.push(` ${j}- ${Jugadores[0]}`);
+            }
+
+        } while (jugadoresRestantes > 1);
     }
 }
 
@@ -93,9 +105,9 @@ console.log(Jugadores);
 
 console.log(CantidadDeNumeros);
 
+console.log(Calificaciones);
 
-
-
+alert(`${Calificaciones}`);
 
 
 
