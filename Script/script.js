@@ -46,7 +46,7 @@ const numeroAAdivinar = () =>{
     
     for(let i = 0; i < Jugadores.length; i++){
 
-        let num = Math.floor(Math.random()*10) + 1 ;
+        let num = Math.floor(Math.random()*100) + 1 ;
         CantidadDeNumeros.push(num);
 
     }
