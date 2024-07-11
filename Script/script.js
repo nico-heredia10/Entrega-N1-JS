@@ -6,7 +6,7 @@ let jugar = confirm('Quieres jugar?');
 
 const Jugadores = [];
 const CantidadDeNumeros = [];
-const Calificaciones = [];
+const Calificaciones = ["  Posiciones  \n"];
 
 // Agregamos la cantidad de jugadores y sus nombres
 
@@ -56,7 +56,7 @@ const numeroAAdivinar = () =>{
 // Juego
 
 if(jugar){
-        function juego(){
+        function juego() {
     
         let jugadoresRestantes = Jugadores.length;
 
