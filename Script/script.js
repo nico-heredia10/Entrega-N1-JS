@@ -1,6 +1,6 @@
 
 
-alert('¿Quien adivina el numero? \n De 1 a 8 jugadores');
+alert('¿Quien adivina el numero? \n De 2 a 8 jugadores');
 
 let jugar = confirm('Quieres jugar?');
 
@@ -18,7 +18,7 @@ if(jugar){
     
         let numeroDeJugadores = parseFloat(prompt('Ingrese la cantidad de jugadores'));
 
-        if(numeroDeJugadores <= 8 && numeroDeJugadores > 0){
+        if(numeroDeJugadores <= 8 && numeroDeJugadores > 1){
 
             for(let i = 0; i < numeroDeJugadores; i++){
 
